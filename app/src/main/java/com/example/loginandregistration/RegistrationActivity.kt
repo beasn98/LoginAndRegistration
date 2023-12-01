@@ -36,6 +36,9 @@ class RegistrationActivity: AppCompatActivity() {
                 RegistrationUtil.validateUsername(username) &&
                 RegistrationUtil.validateEmail(email) &&
                 RegistrationUtil.validateName(name)) {
+
+                RegistrationUtil.existingUsers.add(username)
+                RegistrationUtil.existingEmails.add(email)
                 //apply lambda will call the functions inside it on the object that apply is called on
                 val resultIntent = Intent().apply {
                     // apply { putExtra() } is doing the same thing as resultIntent.putExtra()
